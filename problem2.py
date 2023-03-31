@@ -1,31 +1,26 @@
+# start  
 def takeInput():
     num1 = float(input("Enter first number: "))
     num2 = float(input("Enter second number: "))
-    operator = input("Enter operator (+,-,*,/): ")
-    return num1, num2, operator
+    op = input("Enter operator (+,-,*,/): ")
+    return num1, num2, op
 
 def displayResult():
-    num1, num2, operator = takeInput()
+    num1, num2, op = takeInput()
 
-    if operator == '+':
+    if op == '+':
         result = num1 + num2
-        formula = f"{num1} + {num2} = {result}"
-    elif operator == '-':
+    elif op == '-':
         result = num1 - num2
-        formula = f"{num1} - {num2} = {result}"
-    elif operator == '*':
+    elif op == '*':
         result = num1 * num2
-        formula = f"{num1} * {num2} = {result}"
-    elif operator == '/':
-        if num2 == 0:
-            print("Error: Cannot divide by zero")
-            return
+    elif op == '/':
         result = num1 / num2
-        formula = f"{num1} / {num2} = {result}"
     else:
         print("Invalid operator")
         return
 
-    print(formula)
+    formula = f"{num1} {op} {num2}"
+    print(f"{formula} = {result}")
 
 displayResult()
